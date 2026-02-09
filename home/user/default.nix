@@ -3,7 +3,7 @@
 		./config.nix
 	];
 
-	imports.nixpkgs.config = {
+	nixpkgs.config = {
 		allowUnfree = true;
 	};
 }

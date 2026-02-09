@@ -1,5 +1,8 @@
+let configDir = ../config;
+in
 {
 	home.file = {
-		".config/hypr".source = "../config/hypr";
+		".config/hypr/".force = true;
+		".config/hypr/".source = "${configDir}/hypr/";
 	};
 }

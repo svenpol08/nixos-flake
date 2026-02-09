@@ -6,22 +6,32 @@
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
 		home-manager = {
 			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 	
-	outputs = inputs:
+	outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+	let
+		lib = nixpkgs.lib;
+		system = "x86_64-linux";
+		pkgs = nixpkgs.legacyPackages.${system};
+        	pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+	in
 	{
-		nixosConfigurations.noow33 = inputs.nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
+		nixosConfigurations.noow33 = lib.nixosSystem {
+			inherit system;
+			specialArgs = { inherit pkgs-unstable; };
 			modules = [ ./system/configuration.nix ];
-			specialArgs = { inherit inputs; };
 		};
-
-		homeConfigurations.noow33 = inputs.home-manager.nixpkgs.lib.homeManagerConfiguration {
-			pkgs = "inputs.nixpkgs.legacyPackages.x86_64-linux";
-			modules = [ ./home ];
-			extraSpecialArgs = { inherit inputs; };
+		homeConfigurations = {
+			"noow33" = home-manager.lib.homeManagerConfiguration {
+				inherit pkgs;
+				modules = [ ./home ];
+                		extraSpecialArgs = {
+                    			inherit pkgs-unstable;
+                    			inherit inputs;
+                		};
+			};
 		};
 	};
 }
