@@ -5,7 +5,6 @@
 
 	environment.systemPackages = with pkgs; [
 		hyprpaper
-		kitty
 		libnotify
 		wl-clipboard
 		wofi
