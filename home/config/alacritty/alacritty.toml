@@ -1,0 +1,15 @@
+[window]
+
+opacity = 0.7
+
+padding.x = 15
+padding.y = 15
+
+decorations = "Full"
+decorations_theme_variant = "Dark" # "Dark"
+
+[font]
+normal = {family =  "CaskaydiaCoveNerdFont", style = "Normal"}
+bold = {family =  "CaskaydiaCoveNerdFont", style = "Bold"}
+italic = {family =  "CaskaydiaCoveNerdFont", style = "Italic"}
+bold_italic = {family =  "CaskaydiaCoveNerdFont", style = "BoldItalic"}

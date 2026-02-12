@@ -30,8 +30,12 @@
 		btop
 		gh
 		zsh-powerlevel10k
-		kitty
+		alacritty
 		tmux
+	];
+
+	fonts.packages = with pkgs; [
+		nerd-fonts.caskaydia-cove
 	];
 
  	programs = {
