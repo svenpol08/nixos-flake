@@ -8,6 +8,6 @@
 		./programs.nix
 		./nixsettings.nix
 		./users.nix
-		./nvf.nix
+		./nvim.nix
 	];
 }

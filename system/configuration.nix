@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 
 {
 	imports = [ 
@@ -39,17 +39,17 @@
 	];
 
  	programs = {
-		neovim = {
-			enable = true;
-			defaultEditor = true;
-		};
 		zsh = {
 			enable = true;
 			enableCompletion = true;
 			autosuggestions.enable = true;
 			promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+			shellAliases = {
+				rebuild = "sudo nixos-rebuild switch --flake ~/nixos-flake#noow33 && home-manager switch --flake ~/nixos-flake#noow33";
+			};
 			ohMyZsh = {
 				enable = true;
+				plugins = [ "git" "dirhistory" ];
 			};
 		};
 	};
