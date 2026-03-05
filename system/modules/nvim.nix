@@ -1,5 +1,3 @@
-{ inputs, pkgs, pkgs-unstable, ... }:
-
 {
     programs.nvf = {
         enable = true;
@@ -10,14 +8,19 @@
                 preventJunkFiles = true;
                 presence.neocord.enable = true;
                 git.enable = true;
+                binds.whichKey.enable = true;
+                statusline.lualine = {
+                    enable = true;
+
+                };
                 lsp = {
                     enable = true;
                     lspconfig.enable = true;
                     lspkind.enable = true;
                 };
-                autocomplete = {
-                    blink-cmp.enable = true;
-                    blink-cmp.friendly-snippets.enable = true;
+                autocomplete.blink-cmp = {
+                    enable = true;
+                    friendly-snippets.enable = true;
                 };
                 options = {
                     wrap = false;
@@ -34,6 +37,12 @@
                         lsp.enable = true;
                         extraDiagnostics.enable = true;
                     };
+                    python = {
+                        enable = true;
+                        lsp.enable = true;
+                        dap.enable = true;
+                        format.enable = true;
+                    };
                     typst = { 
                         enable = true;
                         lsp.enable = true;
@@ -44,7 +53,7 @@
                     oil-nvim = {
                         enable = true;
                         gitStatus.enable = true;
-                        setupOpts = { view_options.show_hidden = true; };
+                        setupOpts = { skip_confirm_for_simple_edits = true; view_options.show_hidden = true; };
                     };
                 };
                 keymaps = [
@@ -54,6 +63,7 @@
                     { key = "<leader>y"; mode = "n"; action = "\"+y<CR>";}
                     { key = "<leader>d"; mode = "n"; action = "\"+d<CR>";}
                     { key = "<leader>e"; mode = "n"; action = ":Oil<CR>";}
+                    { key = "<leader>f"; mode = "n"; action = ":term<CR>";}
                 ];
             };
         };

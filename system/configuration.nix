@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }:
+{ pkgs, ... }:
 
 {
 	imports = [ 
@@ -27,11 +27,17 @@
 		pfetch-rs
 		fastfetch
 		heroic
-		btop
+        btop
 		gh
 		zsh-powerlevel10k
 		alacritty
 		tmux
+        vesktop
+        bottles-unwrapped
+        python3
+        vscodium
+        spotify
+        deadlock-mod-manager
 	];
 
 	fonts.packages = with pkgs; [
