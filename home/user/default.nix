@@ -1,9 +1,9 @@
 {
-	imports = [
-		./config.nix
-	];
+  imports = [
+    ./config.nix
+  ];
 
-	nixpkgs.config = {
-		allowUnfree = true;
-	};
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 }

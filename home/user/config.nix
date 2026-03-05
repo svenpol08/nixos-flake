@@ -1,8 +1,9 @@
-let configDir = ../config;
+let
+  configDir = ../config;
 in
 {
-	home.file = {
-		".config/hypr/".source = "${configDir}/hypr";
-		".config/alacritty/".source = "${configDir}/alacritty";
-	};
+  home.file = {
+    ".config/hypr/".source = "${configDir}/hypr";
+    ".config/alacritty/".source = "${configDir}/alacritty";
+  };
 }
