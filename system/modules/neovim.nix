@@ -9,10 +9,7 @@
         presence.neocord.enable = true;
         git.enable = true;
         binds.whichKey.enable = true;
-        statusline.lualine = {
-          enable = true;
-
-        };
+        statusline.lualine.enable = true;
         lsp = {
           enable = true;
           lspconfig.enable = true;
@@ -24,7 +21,7 @@
         };
         options = {
           wrap = false;
-          tabstop = 4;
+          tabstop = 2;
         };
         theme = {
           enable = true;
@@ -47,6 +44,11 @@
             enable = true;
             lsp.enable = true;
             extensions.typst-preview-nvim.enable = true;
+          };
+          clang = {
+            enable = true;
+            dap.enable = true;
+            lsp.enable = true;
           };
         };
         utility = {

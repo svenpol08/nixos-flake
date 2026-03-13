@@ -8,6 +8,7 @@
     ./programs.nix
     ./nixsettings.nix
     ./users.nix
-    ./nvim.nix
+    ./neovim.nix
+    ./spotify.nix
   ];
 }

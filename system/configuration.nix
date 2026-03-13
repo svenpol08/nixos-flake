@@ -19,9 +19,7 @@
     };
   };
 
-  security.sudo = {
-    wheelNeedsPassword = false;
-  };
+  security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
     firefox
@@ -32,12 +30,8 @@
     gh
     zsh-powerlevel10k
     alacritty
-    tmux
     vesktop
     bottles-unwrapped
-    python3
-    vscodium
-    spotify
     deadlock-mod-manager
   ];
 

@@ -7,9 +7,6 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
-    git = {
-      enable = true;
-
-    };
+    git.enable = true;
   };
 }

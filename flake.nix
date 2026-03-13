@@ -13,12 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs =
     inputs@{
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       flake-parts,
       ...
@@ -30,6 +30,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             inputs.nvf.nixosModules.default
+            inputs.spicetify-nix.nixosModules.default
             ./system/configuration.nix
           ];
         };
