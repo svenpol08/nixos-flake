@@ -47,6 +47,8 @@
       promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       shellAliases = {
         rebuild = "sudo nixos-rebuild switch --flake ~/nixos-flake#noow33 && home-manager switch --flake ~/nixos-flake#noow33";
+        rebuild-home = "home-manager switch --flake ~/nixos-flake#noow33";
+        rebuild-system = "sudo nixos-rebuild switch --flake ~/nixos-flake#noow33";
       };
       ohMyZsh = {
         enable = true;
