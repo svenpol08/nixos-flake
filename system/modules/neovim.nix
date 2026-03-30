@@ -1,8 +1,7 @@
 {
   programs.nvf = {
     enable = true;
-    settings = {
-      vim = {
+    settings.vim = {
         viAlias = false;
         vimAlias = true;
         preventJunkFiles = true;
@@ -22,11 +21,6 @@
         options = {
           wrap = false;
           tabstop = 2;
-        };
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "macchiato";
         };
         languages = {
           nix = {
@@ -100,5 +94,4 @@
         ];
       };
     };
-  };
 }

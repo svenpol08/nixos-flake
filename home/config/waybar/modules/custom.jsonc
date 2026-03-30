@@ -1,0 +1,20 @@
+{
+  "custom/spotify": {
+    "interval": 2,
+    "return-type": "json",
+    "exec": "playerctl metadata -p spotify --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\"}'",
+    "format": "{icon} {text}",
+    "format-icons": {
+      "Playing": " ",
+      "Paused": " "
+    },
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "playerctl -p spotify next",
+    "on-scroll-up": "playerctl -p spotify volume 0.1+",
+    "on-scroll-down": "playerctl -p spotify volume 0.1-"
+  },
+
+  "custom/distro": {
+    "format": " "
+  }
+}

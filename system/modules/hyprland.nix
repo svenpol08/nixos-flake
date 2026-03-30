@@ -4,8 +4,13 @@
   programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [
+    mpd
+    mpc
     hyprpaper
+    firefox
+    alacritty
     libnotify
+    playerctl
     wl-clipboard
     wofi
     waybar

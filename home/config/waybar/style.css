@@ -1,0 +1,23 @@
+* {
+  font-family: "IosevkaTerm Nerd Font";
+  font-size: 18px
+}
+
+window#waybar {
+  min-height: 18px;
+  background-color: #4e4f4e;
+  color: #adadad;
+}
+
+.modules-right {
+  margin: 0 10px ;
+  background-color: @background;
+}
+
+.modules-center {
+
+}
+
+.modules-left {
+  margin: 0 10px;
+}

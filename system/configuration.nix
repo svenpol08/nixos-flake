@@ -5,13 +5,7 @@
     ./hardware-configuration.nix
     ./modules
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-
+  
   services = {
     xserver.xkb = {
       layout = "us";
@@ -22,43 +16,16 @@
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
-    firefox
     pfetch-rs
     fastfetch
-    heroic
-    btop
+    htop
     gh
-    zsh-powerlevel10k
-    alacritty
-    vesktop
-    bottles-unwrapped
-    deadlock-mod-manager
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
+    nerd-fonts.iosevka-term
   ];
-
-  programs = {
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake ~/nixos-flake#noow33 && home-manager switch --flake ~/nixos-flake#noow33";
-        rebuild-home = "home-manager switch --flake ~/nixos-flake#noow33";
-        rebuild-system = "sudo nixos-rebuild switch --flake ~/nixos-flake#noow33";
-      };
-      ohMyZsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "dirhistory"
-        ];
-      };
-    };
-  };
 
   system.stateVersion = "25.11";
 }

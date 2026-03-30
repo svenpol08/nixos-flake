@@ -1,0 +1,25 @@
+{
+  "include": [
+    "./modules/*.jsonc"
+  ],
+
+  "modules-left": [
+    "custom/distro",
+    "hyprland/workspaces",
+    "custom/spotify"
+  ],
+
+  "modules-center": [
+  ],
+
+  "modules-right": [
+    "clock"
+  ],
+    
+	"layer": "top",
+  "padding-left": 10,
+  "padding-right": 10,
+	"spacing": 10,
+	"mode": "dock",
+	"reload_style_on_change": true
+}
