@@ -49,6 +49,7 @@
         homeConfigurations = {
           "noow33" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
+            extraSpecialArgs = { inherit inputs; inherit nixpkgs; };
             modules = [ 
               inputs.nixcord.homeModules.nixcord
               ./home

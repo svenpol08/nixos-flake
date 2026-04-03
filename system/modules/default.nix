@@ -15,5 +15,6 @@
     ./drawing.nix
     ./gaming.nix
     ./network.nix
+    ./llm.nix
   ];
 }

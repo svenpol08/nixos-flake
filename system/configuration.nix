@@ -5,13 +5,6 @@
     ./hardware-configuration.nix
     ./modules
   ];
-  
-  services = {
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -26,6 +19,6 @@
     nerd-fonts.caskaydia-cove
     nerd-fonts.iosevka-term
   ];
-
+  
   system.stateVersion = "25.11";
 }

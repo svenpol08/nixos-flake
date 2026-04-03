@@ -1,11 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [
-    mpd
-    mpc
     hyprpaper
     firefox
     alacritty
@@ -13,10 +11,12 @@
     playerctl
     wl-clipboard
     wofi
+    rofi
     waybar
     qt5.qtwayland
     qt6.qtwayland
     mako
     hyprshot
+    cava
   ];
 }

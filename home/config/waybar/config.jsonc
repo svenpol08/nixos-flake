@@ -5,14 +5,15 @@
 
   "modules-left": [
     "custom/distro",
-    "hyprland/workspaces",
-    "custom/spotify"
+    "hyprland/workspaces"
   ],
 
   "modules-center": [
   ],
 
   "modules-right": [
+    "custom/spotify",
+    "custom/cava",
     "clock"
   ],
     

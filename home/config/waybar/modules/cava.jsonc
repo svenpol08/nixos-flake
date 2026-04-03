@@ -1,0 +1,7 @@
+{
+  "custom/cava": {
+    "format": "{}",
+    "interval": 2,
+    "exec": "~/.config/waybar/scripts/cava.sh"
+  }
+}
