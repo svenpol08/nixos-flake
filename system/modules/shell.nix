@@ -1,18 +1,29 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestions.enable = true;
-    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     ohMyZsh = {
       enable = true;
       plugins = [
         "git"
         "dirhistory"
       ];
+    };
+  };
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    add_newline = false;
+    format = "$os$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+    os = {
+      disabled = false;
+      symbols.NixOS = " ";
+    };
+    username = {
+      style_user = "bright-white bold";
+      style_root = "bright-red bold";
     };
   };
 }

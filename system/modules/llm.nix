@@ -8,7 +8,6 @@
     loadModels = [
       "mathstral:7b"
       "jaahas/qwen3.5-uncensored:9b"
-      "gemma4:e2b"
     ];
   };
   environment.systemPackages =  with pkgs; [ 
