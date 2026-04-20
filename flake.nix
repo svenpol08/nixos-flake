@@ -37,6 +37,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       flake = {
+        nixosModules.shadps4 = import  ./system/features/shadps4.nix;
         nixosConfigurations.noow33 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [

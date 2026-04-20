@@ -10,6 +10,10 @@
       useQuickCss = true;
       themeLinks = [];
       frameless = true;
+      plugins.volumeBooster = {
+        enable = true;
+        multiplier = 10.0;
+      };
     };
   };
 }

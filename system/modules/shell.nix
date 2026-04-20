@@ -21,9 +21,5 @@
       disabled = false;
       symbols.NixOS = " ";
     };
-    username = {
-      style_user = "bright-white bold";
-      style_root = "bright-red bold";
-    };
   };
 }
