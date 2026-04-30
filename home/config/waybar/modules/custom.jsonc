@@ -15,6 +15,7 @@
   },
 
   "custom/distro": {
-    "format": " "
+    "format": " ",
+    "on-click": "rofi -drun"
   }
 }

@@ -8,19 +8,12 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  environment.systemPackages = with pkgs; [
-    pfetch-rs
-    fastfetch
-    htop
-    gh
-    gitlogue
-    mpv
-  ];
-  
-  fonts.packages = with pkgs; [
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.iosevka-term
-  ];
-  
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   system.stateVersion = "25.11";
 }

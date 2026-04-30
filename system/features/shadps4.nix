@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 let
   shadps4 = pkgs.fetchurl {
-    url = "https://github.com/diegolix29/shadPS4/releases/download/Shadlix-shadPS4-2026-04-20-fe5b06ffa0c6c7884fda2ef622deebee845c6bf4/Shadlix-shadps4-linux-qt-2026-04-20-fe5b06f.zip";
-    hash = "sha256:1a8751219be5b58f812168482a179db24a71bfa0db7d604688858939038d36e9";
+    url = "https://github.com/diegolix29/shadPS4/releases/download/Shadlix-shadPS4-2026-04-30-a033cd23337ce430ee3a38f5e8d41d45b6253e5b/Shadlix-shadps4-linux-qt-2026-04-30-a033cd2.zip";
+    hash = "sha256-s7xeIaxxS5VqTS2qiV8V03AB3SM+oNT6ImOqY43PgaE=";
   };
   shadps4Unpacked = pkgs.runCommand "shadps4" {
     nativeBuildInputs = [ pkgs.unzip ];

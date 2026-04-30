@@ -12,6 +12,9 @@
       statusline.lualine.enable = true;
       treesitter = {
         enable = true;
+        context.enable = true;
+        indent.enable = false;
+        textobjects.enable = true;
       };
       lsp = {
         enable = true;
@@ -22,16 +25,16 @@
         enable = true;
         friendly-snippets.enable = true;
       };
-      options = {
+      opts = {
         wrap = false;
         tabstop = 2;
+        softtabstop = 2;
       };
       languages = {
         enableDAP = true;
         enableTreesitter = true;
         enableFormat = true;
         enableExtraDiagnostics = true;
-
         assembly.enable = true;
         nix.enable = true;
         python.enable = true;

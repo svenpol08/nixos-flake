@@ -6,7 +6,6 @@
     ./locales.nix
     ./sound.nix
     ./shell.nix
-    ./programs.nix
     ./nixsettings.nix
     ./users.nix
     ./neovim.nix

@@ -3,9 +3,9 @@
   imports = [ inputs.self.nixosModules.shadps4 ];
   environment.systemPackages = with pkgs; [
     heroic
-    mesa
+    prismlauncher
+    gamescope
   ];
-
   programs = {
     steam = {
       enable = true;
