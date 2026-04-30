@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
+  imports = [../features/helium.nix];
   programs.hyprland.enable = true;
+  programs.helium.enable = true;
 
   environment.systemPackages = with pkgs; [
     hyprpaper

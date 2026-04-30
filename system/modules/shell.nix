@@ -12,6 +12,7 @@
     htop
     unzip
     lazygit
+    gh-dash
   ];
   programs = {
     zsh = {
