@@ -1,9 +1,0 @@
-[ window ]
-padding = {x = 5, y = 5}
-
-
-[font]
-normal = {family =  "CaskaydiaCoveNerdFont", style = "Normal"}
-bold = {family =  "CaskaydiaCoveNerdFont", style = "Bold"}
-italic = {family =  "CaskaydiaCoveNerdFont", style = "Italic"}
-bold_italic = {family =  "CaskaydiaCoveNerdFont", style = "BoldItalic"}

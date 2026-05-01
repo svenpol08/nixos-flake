@@ -1,46 +1,30 @@
 {
-  description = "flak";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-    home-manager.url = "github:nix-community/home-manager";
-    nvf.url = "github:NotAShelf/nvf";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wrappers.url = "github:Lassulus/wrappers";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    nvf.url = "github:NotAShelf/nvf";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    stylix.url = "github:nix-community/stylix";
-    nixcord.url = "github:FlameFlag/nixcord";
   };
 
-  outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      flake-parts,
-      ...
-    }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      flake = {
-        nixosModules.shadps4 = import  ./system/features/shadps4.nix;
-        nixosConfigurations.noow33 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.nvf.nixosModules.default
-            inputs.spicetify-nix.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            ./system/configuration.nix
-          ];
-        };
-        homeConfigurations = {
-          "noow33" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            extraSpecialArgs = { inherit inputs; inherit nixpkgs; };
-            modules = [ 
-              inputs.nixcord.homeModules.nixcord
-              ./home
-            ];
-          };
-        };
-      };
-    };
+  outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
+    inherit (lib.fileset) toList fileFilter;
+
+    isNixModule = file:
+      file.hasExt "nix"
+      && file.name != "flake.nix"
+      && !lib.hasPrefix "_" file.name;
+
+    importTree = path:
+      toList (fileFilter isNixModule path);
+
+    mkFlake = inputs.flake-parts.lib.mkFlake {inherit inputs;};
+  in
+    mkFlake {imports = importTree ./.;};
 }
